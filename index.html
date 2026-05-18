@@ -57,6 +57,8 @@
         <div class="info-row"><span class="info-label">Date livraison</span><span class="info-value">${d.livraison}</span></div>
         <div class="info-row"><span class="info-label">N° Unique</span><span class="serial-badge">${d.serial}</span></div>
       </div>
+      <div class="card-footer"><div class="dot"></div><span class="footer-text">Casque enregistré — Marché n° ${d.marche}</span></div>`;
+    document.title = d.serial + ' — La Poste';
   }
   function renderError(id) {
     document.getElementById('card').innerHTML = header() + `
