@@ -48,18 +48,17 @@
   function header() {
     return `<div class="card-header"><div><div class="logo-poste">La Poste</div><div class="logo-sub">Équipement agent</div></div><div class="envelope">✉</div></div>`;
   }
-  function renderCasque(d) {
-    document.getElementById('card').innerHTML = header() + `
-      <div class="card-title"><p>Désignation</p><h1>${d.designation}</h1></div>
-      <div>
-        <div class="info-row"><span class="info-label">Taille</span><span class="info-value">${d.taille}</span></div>
-        <div class="info-row"><span class="info-label">N° Marché</span><span class="info-value">${d.marche}</span></div>
-        <div class="info-row"><span class="info-label">Date livraison</span><span class="info-value">${d.livraison}</span></div>
-        <div class="info-row"><span class="info-label">N° Unique</span><span class="serial-badge">${d.serial}</span></div>
-      </div>
-      <div class="card-footer"><div class="dot"></div><span class="footer-text">Casque enregistré — Marché n° ${d.marche}</span></div>`;
-    document.title = d.serial + ' — La Poste';
-  }
+ function renderCasque(d) {
+  document.getElementById('card').innerHTML = header() + `
+    <div class="card-title"><p>Fiche produit</p><h1>${d.designation}</h1></div>
+    <div>
+      <div class="info-row"><span class="info-label">Taille</span><span class="info-value">${d.taille}</span></div>
+      <div class="info-row"><span class="info-label">N° Marché</span><span class="info-value">${d.marche}</span></div>
+      <div class="info-row"><span class="info-label">Date livraison</span><span class="info-value">${d.livraison}</span></div>
+      <div class="info-row"><span class="info-label">N° Unique</span><span class="serial-badge">${d.serial}</span></div>
+    </div>`;
+  document.title = d.serial + ' — La Poste';
+}
   function renderError(id) {
     document.getElementById('card').innerHTML = header() + `
       <div class="error-state"><div class="icon">⚠️</div><h2>Casque introuvable</h2><p>Le numéro <strong>${id||'—'}</strong> ne correspond à aucun casque enregistré.</p></div>`;
